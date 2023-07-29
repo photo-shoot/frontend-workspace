@@ -1,10 +1,11 @@
 import * as S from "./LayoutHeader.styles";
+import { ILayoutHeaderUI } from "./LayoutHeader.types";
 
-export default function LayoutHeaderUI() {
+export default function LayoutHeaderUI(props: ILayoutHeaderUI) {
   return (
     <S.Wrapper>
       <S.HeaderTop>
-        <S.Join>회원가입</S.Join>
+        <S.Join onClick={props.onClickJoinBtn}>회원가입</S.Join>
         <S.Login>로그인</S.Login>
       </S.HeaderTop>
       <S.HeaderBottom>

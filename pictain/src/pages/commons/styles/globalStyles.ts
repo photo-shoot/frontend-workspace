@@ -12,6 +12,12 @@ export const globalStyles = css`
     src: url("/fonts/BMDOHYEON_ttf.ttf");
   }
 
+  @font-face {
+    font-family: "Pretendard-regular";
+    font-size: 15px;
+    src: url("/fonts/PRETENDARD-REGULAR.woff");
+  }
+
   /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -102,7 +108,7 @@ export const globalStyles = css`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: "Pretendard-regular";
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */

@@ -1,5 +1,10 @@
+import { useRouter } from "next/router";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
 
 export default function LayoutHeader() {
-  return <LayoutHeaderUI />;
+  const router = useRouter();
+  const onClickJoinBtn = () => {
+    router.push("/join");
+  };
+  return <LayoutHeaderUI onClickJoinBtn={onClickJoinBtn} />;
 }
