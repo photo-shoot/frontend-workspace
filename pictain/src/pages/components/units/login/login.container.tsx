@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import LoginPageComponentUI from "./login.presenter";
+import axios from "axios";
 
 export default function LoginPageComponent() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ export default function LoginPageComponent() {
     }
   };
 
-  const onClickSignIn = () => {
+  const onClickSignIn = async () => {
     if (!email) {
       setEmailError("이메일을 입력해주세요.");
     }

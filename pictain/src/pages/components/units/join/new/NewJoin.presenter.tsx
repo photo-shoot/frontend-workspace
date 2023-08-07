@@ -10,7 +10,7 @@ export default function NewJoinPageComponentUI(props: INewJoinPageComponentUI) {
       <LayoutHeader />
       <S.userContainer>
         <S.User src="/pages/join/User.png" />
-        {props?.isUserData && (
+        {!props?.isUserData && (
           <Fragment>
             <S.InputWrapper>
               <S.Email onChange={props.onChangeEmail} placeholder="이메일" />
@@ -19,7 +19,7 @@ export default function NewJoinPageComponentUI(props: INewJoinPageComponentUI) {
             <S.InputWrapper>
               <S.Password
                 onChange={props.onChangePassword}
-                typeof="password"
+                type="password"
                 placeholder="비밀번호"
               />
               <S.ErrorMessage>{props.passwordError}</S.ErrorMessage>
@@ -32,8 +32,8 @@ export default function NewJoinPageComponentUI(props: INewJoinPageComponentUI) {
         </S.InputWrapper>
         <Form layout="horizontal">
           <S.RadioGroup onChange={props.onChangeRadioBtn}>
-            <S.radioButton value="member">손님</S.radioButton>
-            <S.radioButton value="admin">관리자</S.radioButton>
+            <S.radioButton value="MEMBER">손님</S.radioButton>
+            <S.radioButton value="">관리자</S.radioButton>
             <S.ErrorMessage>{props.isMemberError}</S.ErrorMessage>
           </S.RadioGroup>
         </Form>

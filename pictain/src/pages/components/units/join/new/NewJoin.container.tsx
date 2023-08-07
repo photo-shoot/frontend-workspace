@@ -2,12 +2,14 @@ import NewJoinPageComponentUI from "./NewJoin.presenter";
 import { ChangeEvent, useState } from "react";
 import { RadioChangeEvent } from "antd";
 import { INewJoinPageComponent } from "./NewJoin.types";
+import axios from "axios";
 
 export default function NewJoinPageComponent(props: INewJoinPageComponent) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [isMember, setIsMember] = useState("");
+  const [profileImageName, setProfileImageName] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [nicknameError, setNicknameError] = useState(" ");
@@ -42,7 +44,7 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
     }
   };
 
-  const onClickSubmit = () => {
+  const onClickSubmit = async () => {
     if (!email) {
       setEmailError("이메일을 입력해주세요.");
     }
@@ -56,7 +58,19 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
       setIsMemberError("구분을 선택해주세요.");
     }
     if (email && password && nickname && isMember) {
-      console.log(`${email}, ${password} ${nickname} , ${isMember}`);
+      console.log(`${email}, ${password}, ${nickname} , ${isMember}`);
+      try {
+        const response = await axios.post("http://192.168.111.1:8080/signup", {
+          email,
+          password,
+          nickname,
+          profileImageName,
+          type: isMember,
+        });
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

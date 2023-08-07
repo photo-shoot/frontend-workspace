@@ -104,6 +104,8 @@ export const globalStyles = css`
   mark,
   audio,
   video {
+    /* height: 100vh;
+    width: 100vh; */
     margin: 0;
     padding: 0;
     border: 0;

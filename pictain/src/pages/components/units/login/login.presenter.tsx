@@ -1,9 +1,11 @@
+import LayoutHeader from "../../../commons/layout/header/LayoutHeader.container";
 import * as S from "./login.styles";
 import { ILoginPageComponentUI } from "./login.types";
 
 export default function LoginPageComponentUI(props: ILoginPageComponentUI) {
   return (
     <S.Wrapper>
+      <LayoutHeader />
       <S.Title src="/pages/login/loginTitle.png" />
       <S.InputWrapper>
         <S.Email onChange={props.onChangeEmail} placeholder="이메일" />
@@ -16,6 +18,10 @@ export default function LoginPageComponentUI(props: ILoginPageComponentUI) {
       <S.SignInBtn type="primary" onClick={props.onClickSignIn}>
         로그인
       </S.SignInBtn>
+      <S.EasyLoginWrapper>
+        <S.EasyLoginBtn src="/pages/login/kakaoLogin.png" />
+        <S.EasyLoginBtn src="/pages/login/naverLogin.png" />
+      </S.EasyLoginWrapper>
     </S.Wrapper>
   );
 }

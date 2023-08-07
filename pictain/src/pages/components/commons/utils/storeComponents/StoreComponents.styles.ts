@@ -1,24 +1,27 @@
 import styled from "@emotion/styled";
+import { Cascader } from "antd";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
+  padding: 0 100px;
 `;
 
-export const Title = styled.div`
-  margin: 145px 0 97px 0;
-  font-family: "BMDOHYEON";
-  font-size: 36px;
+export const SortCascader = styled(Cascader)`
+  width: 226px;
+  font-size: 18px;
+  border: #606060;
   color: #606060;
 `;
 
 export const ComponentsWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 188px;
+  margin-bottom: 60px;
 `;
 
 export const Container = styled.div`
@@ -28,43 +31,30 @@ export const Container = styled.div`
 `;
 
 export const Thumbnail = styled.img`
-  margin-bottom: 30px;
-  width: 281px;
-  height: 303px;
+  margin: 86px 0 61px 0;
+  width: 274px;
+  height: 274px;
+  border-radius: 50%;
   object-fit: cover;
   background-color: #d9d9d9;
-  border: none;
 `;
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-`;
-
-export const Comment = styled.div`
-  font-size: 28px;
-  color: #606060;
-`;
-
-export const UserContainer = styled.div`
-  margin-top: 17px;
-  display: flex;
-  align-items: center;
-`;
-
-export const UserImg = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: #d9d9d9;
-`;
-
-export const User = styled.div`
+export const Name = styled.div`
   font-size: 20px;
   color: #606060;
-  margin-left: 14px;
+  line-height: 1.5rem;
+`;
+
+export const Address = styled.div`
+  font-size: 20px;
+  color: #606060;
+  line-height: 1.5rem;
+`;
+
+export const short_intro = styled.div`
+  font-size: 20px;
+  color: #606060;
+  line-height: 1.5rem;
 `;
 
 export const Reaction = styled.div`
@@ -84,4 +74,20 @@ export const Rate = styled.div`
   font-size: 12px;
   color: #606060;
   margin-right: 15px;
+`;
+
+export const ComponentBottom = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const NextPage = styled.div`
+  font-size: 15px;
+  color: #606060;
+`;
+
+export const PrevPage = styled.div`
+  font-size: 15px;
+  color: #606060;
 `;

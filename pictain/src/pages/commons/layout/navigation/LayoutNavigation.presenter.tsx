@@ -3,9 +3,9 @@ import { Fragment } from "react";
 import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 
 const NAVIGATION_MANUS = [
-  { name: "사진관", page: "/Studio" },
-  { name: "사진작가", page: "/Photographer" },
-  { name: "와글와글", page: "/Community" },
+  { name: "사진관", page: "/store/studio" },
+  { name: "사진작가", page: "/store/photographer" },
+  { name: "와글와글", page: "/community" },
   { name: "마이페이지", page: "/MyPage" },
 ];
 

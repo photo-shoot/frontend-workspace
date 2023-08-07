@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 50px;
+  margin-top: 100px;
 `;
 
 export const Border = styled.hr`

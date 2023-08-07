@@ -15,6 +15,7 @@ export const BackGroundImg = styled.img`
 `;
 export default function EasyJoinPage() {
   const [isUserData, setIsUserData] = useState(true);
+  console.log(isUserData);
   //사용자 데이터 가져와서 props로 넘겨주기..?
 
   return (

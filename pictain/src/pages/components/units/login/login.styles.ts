@@ -9,8 +9,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.img`
+  margin-top: 223px;
   width: 180px;
   height: 30px;
+  margin-bottom: 90px;
 `;
 
 export const InputWrapper = styled.div`
@@ -56,4 +58,17 @@ export const SignInBtn = styled(Button)`
   color: #606060;
   background-color: #ffe2e2;
   border: none;
+`;
+
+export const EasyLoginWrapper = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+`;
+
+export const EasyLoginBtn = styled.img`
+  width: 40px;
+  height: auto;
+  cursor: pointer;
 `;
