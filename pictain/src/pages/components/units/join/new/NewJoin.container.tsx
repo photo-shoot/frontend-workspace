@@ -60,7 +60,7 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
     if (email && password && nickname && isMember) {
       console.log(`${email}, ${password}, ${nickname} , ${isMember}`);
       try {
-        const response = await axios.post("http://192.168.111.1:8080/signup", {
+        const response = await axios.post("http://api.pictain.online/signup", {
           email,
           password,
           nickname,
