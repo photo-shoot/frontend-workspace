@@ -3,7 +3,6 @@ import LayoutNavigationUI from "./LayoutNavigation.presenter";
 import { MouseEvent, useState } from "react";
 
 export default function LayoutNavigation() {
-  const [isStudio, setIsStudio] = useState(false);
   const router = useRouter();
 
   const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {

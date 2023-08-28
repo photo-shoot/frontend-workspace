@@ -31,7 +31,15 @@ export default function Layout(props: ILayoutProps) {
   const HIDDEN_NAVIGATION = ["/join", "/login", `/join/new/userId`, `/join/new`];
   const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
 
-  const HIDDEN_BANNER = ["/join", "/login", `/join/new/userId`, `/join/new`, `/store/studio`, `/store/photographer`];
+  const HIDDEN_BANNER = [
+    "/join",
+    "/login",
+    `/join/new/userId`,
+    `/join/new`,
+    `/store/studio`,
+    `/store/photographer`,
+    `/store/detail`,
+  ];
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
 
   const HIDDEN_FOOTER = ["/join", "/login", `/join/new/userId`, `/join/new`];

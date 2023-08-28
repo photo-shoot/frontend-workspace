@@ -1,20 +1,13 @@
 import { Fragment, useState } from "react";
 import StoreComponents from "../../commons/utils/storeComponents/StoreComponents.container";
 import StudioPageComponentUI from "./StoreComponent.presenter";
-import { useRouter } from "next/router";
+import { IStoreComponent } from "../../commons/utils/storeComponents/StoreComponents.types";
 
-export default function StorePageComponent() {
-  const router = useRouter();
-  const [isPhotographer, setIsPhotographer] = useState(true);
-
-  if (router.asPath == "/store/studio") {
-    setIsPhotographer(false);
-  }
-
+export default function StorePageComponent(props: IStoreComponent) {
   return (
     <Fragment>
-      <StudioPageComponentUI isPhotographer={isPhotographer} />
-      <StoreComponents isPhotographer={isPhotographer} />
+      <StudioPageComponentUI isPhotographer={props.isPhotographer} />
+      <StoreComponents isPhotographer={props.isPhotographer} />
     </Fragment>
   );
 }
