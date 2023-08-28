@@ -1,6 +1,6 @@
 import LayoutHeader from "../../../../commons/layout/header/LayoutHeader.container";
 import * as S from "./NewJoin.styles";
-import { Form } from "antd";
+import { Form, Modal } from "antd";
 import { INewJoinPageComponentUI } from "./NewJoin.types";
 import { Fragment } from "react";
 
@@ -41,6 +41,11 @@ export default function NewJoinPageComponentUI(props: INewJoinPageComponentUI) {
           등록하기
         </S.SubmitBtn>
       </S.userContainer>
+      {props.isModalOpen && (
+        <Modal title="회원가입" open={true} onOk={props.ToggleModal} onCancel={props.ToggleModal}>
+          <p>회원가입이 완료되었습니다!</p>
+        </Modal>
+      )}
     </S.Wrapper>
   );
 }

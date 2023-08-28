@@ -63,6 +63,7 @@ export const Category = styled.div`
   align-items: center;
   font-size: 24px;
   color: #606060;
+  cursor: pointer;
 `;
 
 export const storeContainer = styled.div`

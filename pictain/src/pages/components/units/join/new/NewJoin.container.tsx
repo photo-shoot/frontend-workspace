@@ -3,8 +3,10 @@ import { ChangeEvent, useState } from "react";
 import { RadioChangeEvent } from "antd";
 import { INewJoinPageComponent } from "./NewJoin.types";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function NewJoinPageComponent(props: INewJoinPageComponent) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
@@ -14,6 +16,11 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
   const [passwordError, setPasswordError] = useState("");
   const [nicknameError, setNicknameError] = useState(" ");
   const [isMemberError, setIsMemberError] = useState(" ");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const ToggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.currentTarget.value);
@@ -67,7 +74,8 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
           profileImageName,
           type: isMember,
         });
-        console.log(response);
+        ToggleModal;
+        router.push("http://localhost:3000/main");
       } catch (error) {
         console.log(error);
       }
@@ -86,6 +94,8 @@ export default function NewJoinPageComponent(props: INewJoinPageComponent) {
       nicknameError={nicknameError}
       isMemberError={isMemberError}
       onClickSubmit={onClickSubmit}
+      ToggleModal={ToggleModal}
+      isModalOpen={isModalOpen}
     />
   );
 }

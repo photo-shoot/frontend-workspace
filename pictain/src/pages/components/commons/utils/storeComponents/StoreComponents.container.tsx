@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import StoreComponentsUI from "./StoreComponents.presenter";
+import { IStoreComponent } from "./StoreComponents.types";
 
-export default function StoreComponents() {
-  const router = useRouter();
-  console.log(typeof router.asPath);
-
-  const [isStudio, setIsStudio] = useState(false);
-  if (router.asPath == "/store/studio") {
-    setIsStudio(true);
-  } else {
-    setIsStudio(false);
-  }
+export default function StoreComponents(props: IStoreComponent) {
   const [startPage, setStartPage] = useState(1);
 
   const onClickNextPage = () => {
@@ -29,7 +21,7 @@ export default function StoreComponents() {
     <StoreComponentsUI
       onClickNextPage={onClickNextPage}
       onClickPrevPage={onClickPrevPage}
-      isStudio={isStudio}
+      isPhotographer={props.isPhotographer}
     />
   );
 }

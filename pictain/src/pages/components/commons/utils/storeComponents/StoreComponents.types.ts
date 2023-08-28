@@ -1,5 +1,9 @@
+export interface IStoreComponent {
+  isPhotographer: boolean;
+}
+
 export interface IStoreComponentUI {
   onClickNextPage: () => void;
   onClickPrevPage: () => void;
-  isStudio: boolean;
+  isPhotographer: boolean;
 }

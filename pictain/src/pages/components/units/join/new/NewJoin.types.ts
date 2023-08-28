@@ -12,6 +12,8 @@ export interface INewJoinPageComponentUI {
   nicknameError: string;
   isMemberError: string;
   onClickSubmit: () => void;
+  ToggleModal: () => void;
+  isModalOpen: boolean;
 }
 
 export interface INewJoinPageComponent {

@@ -1,12 +1,21 @@
-import { useRouter } from "next/router";
 import StoreDetailPageComponentUI from "./storeDetail.presenter";
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
+import StoreDetailInformComponent from "./inform/storeDetailInform.container";
+import StoreDetailPriceComponent from "./price/storeDetailPrice.container";
+import StoreDetailReviewComponent from "./review/storeDetailReview.container";
 
 export default function StoreDetailPageComponent() {
-  const router = useRouter();
+  const [userState, setUserState] = useState("inform");
 
   const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {
-    router.push(event.currentTarget.id);
+    setUserState(event.currentTarget.id);
   };
-  return <StoreDetailPageComponentUI onClickMenu={onClickMenu} />;
+  return (
+    <>
+      <StoreDetailPageComponentUI onClickMenu={onClickMenu} />;
+      {userState == "inform" && <StoreDetailInformComponent />}
+      {userState == "price" && <StoreDetailPriceComponent />}
+      {userState == "review" && <StoreDetailReviewComponent />}
+    </>
+  );
 }

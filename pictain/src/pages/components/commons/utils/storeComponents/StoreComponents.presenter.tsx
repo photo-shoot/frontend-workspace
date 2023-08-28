@@ -2,6 +2,7 @@ import * as S from "./StoreComponents.styles";
 import { IStoreComponentUI } from "./StoreComponents.types";
 
 export default function StoreComponentsUI(props: IStoreComponentUI) {
+  //사진관, 사진작가 store api받아서 띄우기
   const ComponentContent = [
     {
       thumbnail: "/layout/banner.01.jpg",
@@ -69,6 +70,7 @@ export default function StoreComponentsUI(props: IStoreComponentUI) {
     },
   ];
 
+  // sort기능 구현해보기..!
   const SortOption = [
     { value: "recommend", label: "추천순" },
     { value: "latest", label: "최신순" },
@@ -82,7 +84,7 @@ export default function StoreComponentsUI(props: IStoreComponentUI) {
           <S.Container key={index}>
             <S.Thumbnail src={el.thumbnail} />
             <S.Name>{el.name}</S.Name>
-            {props.isStudio && <S.Address>{el.address}</S.Address>}
+            {!props.isPhotographer && <S.Address>{el.address}</S.Address>}
             <S.short_intro>{el.short_intro}</S.short_intro>
             <S.Reaction>
               <S.Icon src="/pages/Main/heart.png" />

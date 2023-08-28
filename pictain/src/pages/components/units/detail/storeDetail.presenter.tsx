@@ -5,9 +5,9 @@ import { IStoreDetailPageComponentUI } from "./storeDetail.types";
 
 export default function StoreDetailPageComponentUI(props: IStoreDetailPageComponentUI) {
   const NAVIGATION_MANUS = [
-    { name: "상세설명", page: "/detail/inform" },
-    { name: "가격", page: "/detail/price" },
-    { name: "리뷰", page: "/detail/review" },
+    { name: "상세설명", value: "inform" },
+    { name: "가격", value: "price" },
+    { name: "리뷰", value: "review" },
   ];
 
   return (
@@ -37,8 +37,8 @@ export default function StoreDetailPageComponentUI(props: IStoreDetailPageCompon
       </S.profile>
       <S.NavigationWrapper>
         {NAVIGATION_MANUS.map((el) => (
-          <Fragment key={el.page}>
-            <S.MenuItem id={el.page} onClick={props.onClickMenu}>
+          <Fragment key={el.value}>
+            <S.MenuItem id={el.value} onClick={props.onClickMenu}>
               {el.name}
             </S.MenuItem>
           </Fragment>

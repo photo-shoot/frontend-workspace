@@ -1,5 +1,5 @@
-import PhotographerPageComponent from "../../components/units/Photographer/PhotographerComponent.container";
+import StorePageComponent from "../../components/units/Store/StoreComponent.container";
 
 export default function PhotographerPage() {
-  return <PhotographerPageComponent />;
+  return <StorePageComponent />;
 }

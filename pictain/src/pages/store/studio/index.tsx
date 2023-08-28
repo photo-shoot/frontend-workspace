@@ -1,5 +1,5 @@
-import StudioPageComponent from "../../components/units/Studio/StudioComponent.container";
+import StorePageComponent from "../../components/units/Store/StoreComponent.container";
 
 export default function StudioPage() {
-  return <StudioPageComponent />;
+  return <StorePageComponent />;
 }
