@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import * as S from "./StoreComponent.styles";
-import { IStorePageComponentUI } from "./StoreComponent.types";
+import * as S from "./Store.styles";
+import { IStorePageComponentUI } from "./Store.types";
 
 export default function StorePageComponentUI(props: IStorePageComponentUI) {
   const PhotographerCategories = [

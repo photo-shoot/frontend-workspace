@@ -1,7 +1,7 @@
-import * as S from "./StoreComponents.styles";
-import { IStoreComponentUI } from "./StoreComponents.types";
+import * as S from "./StoreItems.styles";
+import { IStoreItemsUI } from "./StoreItems.types";
 
-export default function StoreComponentsUI(props: IStoreComponentUI) {
+export default function StoreItemsUI(props: IStoreItemsUI) {
   //사진관, 사진작가 store api받아서 띄우기
   const ComponentContent = [
     {
@@ -80,17 +80,17 @@ export default function StoreComponentsUI(props: IStoreComponentUI) {
     <S.Wrapper>
       <S.SortCascader options={SortOption} placeholder="정렬기준" />
       <S.ComponentsWrapper>
-        {ComponentContent.map((el, index) => (
-          <S.Container key={index}>
-            <S.Thumbnail src={el.thumbnail} />
-            <S.Name>{el.name}</S.Name>
+        {props.storeData.map((el) => (
+          <S.Container key={el.storeId}>
+            <S.Thumbnail src={el.profileImgName} />
+            <S.Name>{el.title}</S.Name>
             {!props.isPhotographer && <S.Address>{el.address}</S.Address>}
-            <S.short_intro>{el.short_intro}</S.short_intro>
+            <S.short_intro>{el.shortDescription}</S.short_intro>
             <S.Reaction>
               <S.Icon src="/pages/Main/heart.png" />
-              <S.Rate>{el.like}</S.Rate>
+              <S.Rate>{el.likeCnt}</S.Rate>
               <S.Icon src="/pages/Main/star.png" />
-              <S.Rate>{el.scrap}</S.Rate>
+              <S.Rate>{el.scrapCnt}</S.Rate>
             </S.Reaction>
           </S.Container>
         ))}

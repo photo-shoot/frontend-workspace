@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import StoreComponentsUI from "./StoreComponents.presenter";
-import { IStoreComponent } from "./StoreComponents.types";
+import StoreComponentsUI from "./StoreItems.presenter";
+import { IStoreItems } from "./StoreItems.types";
 
-export default function StoreComponents(props: IStoreComponent) {
+export default function StoreItems(props: IStoreItems) {
   const [startPage, setStartPage] = useState(1);
 
   const onClickNextPage = () => {
@@ -22,6 +21,7 @@ export default function StoreComponents(props: IStoreComponent) {
       onClickNextPage={onClickNextPage}
       onClickPrevPage={onClickPrevPage}
       isPhotographer={props.isPhotographer}
+      storeData={props.storeData}
     />
   );
 }
